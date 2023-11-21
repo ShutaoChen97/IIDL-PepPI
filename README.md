@@ -36,7 +36,7 @@ See the [Malisam](http://prodata.swmed.edu/malisam/) and [Malidup](http://prodat
 # Getting started
 
 See the [wiki](https://github.com/flatironinstitute/deepblast/wiki) on how to use DeepBLAST and TM-vec for remote homology search and alignment.
-If you have questions on how to use DeepBLAST and TM-vec, feel free to raise questions in the [discussions section](https://github.com/ShutaoChen97/IIDL-PepPI/discussions). If you identify any potential bugs, feel free to raise them in the [issuetracker](https://github.com/ShutaoChen97/IIDL-PepPI/issues).
+If you have questions on how to use IIDL-PepPI (or PDB-BRE), feel free to raise questions in the [discussions section](https://github.com/ShutaoChen97/IIDL-PepPI/discussions). If you identify any potential bugs, feel free to raise them in the [issuetracker](https://github.com/ShutaoChen97/IIDL-PepPI/issues).
 
 # Citation
 
