@@ -37,14 +37,14 @@ transformers 4.35.2
 Two multiple sequence alignment tools and three databases are required: 
 ```
 SCRATCH-1D 1.2
-IUPred2A version
+IUPred2A \
 ncbi-blast 2.13.0
-ProtBERT
+ProtBERT \
 ```
 
 Databases:
 ```
-nrdb90(http://bliulab.net/sAMPpred-GAT/static/download/nrdb90.tar.gz)
+nrdb90 (http://bliulab.net/sAMPpred-GAT/static/download/nrdb90.tar.gz)
 ```
 
 **nrdb90**: We have supplied the nrdb90 databases on our webserver. You need to put it into the `utils/` directoy and decompress it. 
@@ -54,7 +54,6 @@ nrdb90(http://bliulab.net/sAMPpred-GAT/static/download/nrdb90.tar.gz)
 `SCRATCH-1D`, `IUPred2A`, `ncbi-blast`, and `ProtBERT` are recommended to be configured as the system envirenment path. Your can follow these steps to install them:
 
 ### 1.3.1 How to install SCRATCH-1D
-
 Download (For linux, about 6.3GB. More information, please see **https://download.igb.uci.edu/**)
 ```
 wget https://download.igb.uci.edu/SCRATCH-1D_1.2.tar.gz
@@ -80,7 +79,7 @@ cd <INSTALL_DIR>/doc
 
 
 ### 1.3.2 How to install IUPred2A
-For download and installation of IUPred2A, please refer to https://iupred2a.elte.hu/download_new. It should be noted that this automation service is **only applicable to academic users.** For business users, please contact the original authors for authorization.
+For download and installation of IUPred2A, please refer to **https://iupred2a.elte.hu/download_new**. It should be noted that this automation service is **only applicable to academic users.** For business users, please contact the original authors for authorization.
 
 After obtaining the IUPred2A software package, decompress it.
 ```
@@ -95,18 +94,46 @@ python3 iupred2a P53_HUMAN.seq long
 
 
 ### 1.3.3 How to install ncbi-blast
+Download (For x64-linux, about 220M. More information, please see **https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html**)
+```
+wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.13.0/ncbi-blast-2.13.0+-x64-linux.tar.gz
+tar -xvzf ncbi-blast-2.13.0+-x64-linux.tar.gz
+```
+Add the path to system envirenment in `~/.bashrc`.
+```
+export BLAST_HOME={your_path}/ncbi-blast-2.13.0+
+export PATH=$PATH:$BLAST_HOME/bin
+```
 
-对于没法生成pssm的序列，我们使用blosum62进行了补全，blosum62可以在文件夹中获得
+Finally, reload the system envirenment and check the ncbi-blast command:
+```
+source ~/.bashrc
+psiblast -h
+```
+
+> **Note:** The purpose of IIDL-PepPI with the help of ncbi-blast is to extract the position-specific scoring matrix (PSSM). It should be noted that for sequences that cannot be effectively aligned, the PSSM is further extracted by blosum62 (which can be found in `utils/blosum62.txt`).
 
 
 ### 1.3.4 How to install ProtBERT
+Download and install (More information, please see **https://huggingface.co/Rostlab/prot_bert** or **https://github.com/agemagician/ProtTrans**)
 
+```
+wget https://zenodo.org/records/4633691/files/prot_bert.zip
+```
+
+or
+
+```
+git lfs install
+git clone https://huggingface.co/Rostlab/prot_bert
+```
 
 
 ## 1.3 Inatsll IIDL-PepPI
 To install from the development branch run
 ```
-pip install git+https://github.com/flatironinstitute/deepblast.git
+wget https://github.com/ShutaoChen97/IIDL-PepPI/archive/refs/heads/main.zip
+
 ```
 
 Then 
@@ -116,8 +143,7 @@ unzip IIDL-PepPI-master.zip
 cd IIDL-PepPI-master
 ```
 
-Finally, config the defalut paths of the above tools
-and databases in `config.yaml`. You can change the paths of the tools and databases by configuring `config.yaml` as you need. 
+**Finally, configure the Defalut path of the above tool and the database in `config.yaml`. You can change the path of the tool and database by configuring `config.yaml` as needed.**
 
 
 # 2 Usage
@@ -129,7 +155,6 @@ It takes 2 steps to predict peptide-protein binary interaction and peptide-prote
 It should be noted that `test.sh` automatically calls the scripts `generate_peptide_features.py`, `generate_protein_features.py`, and `generate_pssm.py` to generate the multi-source isomerization characteristics of peptides and proteins.
  
 > **Note** you can running `python test.py -h` to learn the meaning of each parameter.
-
 
 If you want to retrain based on your private dataset, find the original IIDL-PepPI model in `model/IIDL-PepPI.py`. The IIDL-PepPI source code we wrote is based on the Pytorch implementation and can be easily imported by instantiating it.
 
