@@ -1,0 +1,9 @@
+# Tools
+scratch: scratch
+protbert: protbert
+iupred2a: utils/trRosetta/predict_many.py
+ncbiblast: 
+IIDL-PepPI: 
+
+# Databases and model
+nrdb90: utils/psiblast/nrdb90/nrdb90
