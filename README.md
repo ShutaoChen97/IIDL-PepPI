@@ -7,38 +7,140 @@ The online prediction webserver of IIDL-PepPI can be accessible at **http://bliu
 ![IIDL-PepPI](/imgs/IIDL-PepPI.png)
 **Fig. 1: Data preparation workflow and network architecture of IIDL-PepPI. a** Data preparation workflow of IIDL-PepPI, in which the public databases used include RCSB PDB, PDBe, and UniProt. **b** Network architecture of IIDL-PepPI for peptide-protein binary interaction prediction and binding residue recognition, including sequence representation, feature encoding, bi-attentional module, and decoding. Based on the biological sequence pragmatic analysis, the bi-attention module explicitly integrates features from the peptide and protein sides to distinguish different peptide-protein-specific interactions. **c** The progressive transfer learning architecture. The initial stage of IIDL-PepPI commences with pre-training peptide-protein binary interactions using sequence-level datasets and the coarse-grained learning of basic network parameters. Subsequently, in the second phase, we transfer the parameters of the basic network, replace the decoder, and conduct fine-grained fine-tuning of the model using residue-level dataset for precise prediction of peptide- and protein-binding residues in specific peptide-protein pairs.
 
-# Installation
+# 1 Installation
 
-IIDL-PepPI can be installed from pip via
+## 1.1 Create conda environment
 
 ```
-pip install deepblast
+conda create -n iidl python=3.10
 ```
 
+## 1.2 Requirements
+The main dependencies used in this project are as follows (for more information, please see the `environment.yaml` file):
+
+```
+python  3.10
+biopython 1.81
+huggingface-hub 0.19.4
+numpy 1.26.2
+pandas 2.1.3
+scikit-learn 1.3.2
+scipy 1.11.4
+tokenizers 0.15.0
+torch 2.1.1+cu118
+torchaudio 2.1.1+cu118
+tqdm 4.66.1
+transformers 4.35.2
+```
+
+## 1.3 Tools
+Two multiple sequence alignment tools and three databases are required: 
+```
+SCRATCH-1D 1.2
+IUPred2A version
+ncbi-blast 2.13.0
+ProtBERT
+```
+
+Databases:
+```
+nrdb90(http://bliulab.net/sAMPpred-GAT/static/download/nrdb90.tar.gz)
+```
+
+**nrdb90**: We have supplied the nrdb90 databases on our webserver. You need to put it into the `utils/` directoy and decompress it. 
+
+> **Note** that all the defalut paths of the tools and databases are shown in `config.yaml`. You can change the paths of the tools and databases by configuring `config.yaml` as you need. 
+
+`SCRATCH-1D`, `IUPred2A`, `ncbi-blast`, and `ProtBERT` are recommended to be configured as the system envirenment path. Your can follow these steps to install them:
+
+### 1.3.1 How to install SCRATCH-1D
+
+Download (For linux, about 6.3GB. More information, please see **https://download.igb.uci.edu/**)
+```
+wget https://download.igb.uci.edu/SCRATCH-1D_1.2.tar.gz
+tar -xvzf SCRATCH-1D_1.2.tar.gz
+```
+
+Install
+```
+cd SCRATCH-1D_1.2
+perl install.pl
+```
+
+> **Note:** The 32 bit linux version of blast is provided by default in the 'pkg' sub-folder of the package but can, probably should, and in some cases has to be replaced by the 64 bit or Mac OS version of the blast software for improved performances and compatibility on such systems.
+
+
+Finally, test the installation of SCRATCH-1D
+```
+cd <INSTALL_DIR>/doc
+../bin/run_SCRATCH-1D_predictors.sh test.fasta test.out 4
+```
+
+> **Note:** If your computer has less than 4 cores, replace 4 by 1 in the command line above.
+
+
+### 1.3.2 How to install IUPred2A
+For download and installation of IUPred2A, please refer to https://iupred2a.elte.hu/download_new. It should be noted that this automation service is **only applicable to academic users.** For business users, please contact the original authors for authorization.
+
+After obtaining the IUPred2A software package, decompress it.
+```
+tar -xvzf iupred2a.tar.gz
+```
+
+Finally, test the installation of IUPred2A
+```
+cd <INSTALL_DIR>
+python3 iupred2a P53_HUMAN.seq long
+```
+
+
+### 1.3.3 How to install ncbi-blast
+
+对于没法生成pssm的序列，我们使用blosum62进行了补全，blosum62可以在文件夹中获得
+
+
+### 1.3.4 How to install ProtBERT
+
+
+
+## 1.3 Inatsll IIDL-PepPI
 To install from the development branch run
-
 ```
 pip install git+https://github.com/flatironinstitute/deepblast.git
 ```
 
-# Downloading pretrained models and data
+Then 
 
-The pretrained DeepBLAST model can be downloaded [here](https://users.flatironinstitute.org/jmorton/public_www/deepblast-public-data/checkpoints/deepblast-l8.ckpt).
+```
+unzip IIDL-PepPI-master.zip
+cd IIDL-PepPI-master
+```
 
-The TM-align structural alignments used to pretrain DeepBLAST can be found below
-- [Training data](https://users.flatironinstitute.org/jmorton/public_www/deepblast-public-data/train_matched.txt)
-- [Validation data](https://users.flatironinstitute.org/jmorton/public_www/deepblast-public-data/valid.txt)
-- [Testing data](https://users.flatironinstitute.org/jmorton/public_www/deepblast-public-data/test.txt)
+Finally, config the defalut paths of the above tools
+and databases in `config.yaml`. You can change the paths of the tools and databases by configuring `config.yaml` as you need. 
 
 
-See the [Malisam](http://prodata.swmed.edu/malisam/) and [Malidup](http://prodata.swmed.edu/malidup/) websites to download their datasets.
+# 2 Usage
+It takes 2 steps to predict peptide-protein binary interaction and peptide-protein-specific binding residues:
 
-# Getting started
+(1) Replace the default peptide sequence in the `example/example_peptide_ 1.fasta` file with your peptide sequence (FASTA format). Similarly, replace the default protein sequence in the `example/example_protein_ 1.fasta` file with your protein sequence (FASTA format). If you don't want to do this, you can also test your own peptide-protein pairs by modifying the two sequence file paths passed in by the `test.sh` script (the two parameters are `-pep_fasta` for peptide and `-pro_fasta` for protein, respectively).
 
-See the [wiki](https://github.com/flatironinstitute/deepblast/wiki) on how to use DeepBLAST and TM-vec for remote homology search and alignment.
+(2) Then, run `test.sh` to make multi-level prediction, including binary interaction prediction and combined residue recognition. 
+It should be noted that `test.sh` automatically calls the scripts `generate_peptide_features.py`, `generate_protein_features.py`, and `generate_pssm.py` to generate the multi-source isomerization characteristics of peptides and proteins.
+ 
+> **Note** you can running `python test.py -h` to learn the meaning of each parameter.
+
+
+If you want to retrain based on your private dataset, find the original IIDL-PepPI model in `model/IIDL-PepPI.py`. The IIDL-PepPI source code we wrote is based on the Pytorch implementation and can be easily imported by instantiating it.
+
+
+
+# 3 Problem feedback
 If you have questions on how to use IIDL-PepPI (or PDB-BRE), feel free to raise questions in the [discussions section](https://github.com/ShutaoChen97/IIDL-PepPI/discussions). If you identify any potential bugs, feel free to raise them in the [issuetracker](https://github.com/ShutaoChen97/IIDL-PepPI/issues).
 
-# Citation
+In addition, if you have any further questions about IIDL-PepPI, please feel free to contact us [**stchen@bliulab.net** or **shutao.chen@bit.edu.cn**]
+
+# 4 Citation
 
 If you find our work useful, please cite us at
 ```
