@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import csv
+import yaml
 import torch
 import argparse
 from model.IIDLPepPI import IIDLPepPI, IIDLPepPIRes
@@ -42,39 +43,29 @@ def ResiduePrediction(x_pep, x_ss_pep, x_2_pep, x_diso_pep, x_bert_pep,
 
 # %%
 if __name__ == '__main__':
+    with open("config.yaml", 'r') as f:
+        cfg = yaml.load(f, Loader=yaml.FullLoader)
+    
+    method_path = cfg['IIDL-PepPI']
+    scratch = cfg['SCRATCH-1D']
+    iupred2a = cfg['IUPred2A']
+    ncbiblast = cfg['ncbi-blast']
+    nrdb90 = cfg['nrdb90']
+    protbert = cfg['ProtBERT']
+    
     parser = argparse.ArgumentParser()
-    # method
-    parser.add_argument('-method_path', type=str, default='IIDL-PepPI/',
-                        help='The file path of the IIDL-PepPI model installation')
-    # data and result
     parser.add_argument('-pep_fasta', type=str, default='example/example_peptide_1.fasta',
                         help='Fasta file path of peptide sequence')
     parser.add_argument('-pro_fasta', type=str, default='example/example_protein_1.fasta',
                         help='Fasta file path of protein sequence')
     parser.add_argument('-csv_path', type=str, default='example/',
                         help='File path of IIDL-PepPI analysis output')
-    # tools
-    parser.add_argument('-scratch_path', type=str, default='utils/SCRATCH-1D_1.2/',
-                        help='The file path of SCRATCH-1D_1.2')
-    parser.add_argument('-protbert_path', type=str, default='utils/prot_bert/',
-                        help='The file path of prot_bert')
-    parser.add_argument('-iupred2a_path', type=str, default='utils/iupred2a/',
-                        help='The file path of iupred2a')
-    parser.add_argument('-ncbiblast_path', type=str, default='utils/ncbi-blast-2.13.0+/',
-                        help='The file path of ncbi-blast')
-    parser.add_argument('-nrdb90_path', type=str, default='utils/nrdb90/',
-                        help='The file path of NRDB90 databases')
     args = parser.parse_args()
     
-    method_path = args.method_path
     pep_uip = args.pep_fasta
     pro_uip = args.pro_fasta
     csv_path = args.csv_path
-    scratch = args.scratch_path
-    protbert = args.protbert_path
-    iupred2a = args.iupred2a_path
-    ncbiblast = args.ncbiblast_path
-    nrdb90 = args.nrdb90_path
+    
     models_save = os.path.join(method_path, "saved_models")
    
     uip_tmp = pep_uip.rsplit('/', 1)
