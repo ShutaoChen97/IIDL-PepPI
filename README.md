@@ -137,7 +137,7 @@ git clone https://huggingface.co/Rostlab/prot_bert
 ```
 
 
-## 1.3 Inatsll IIDL-PepPI
+## 1.4 Inatsll IIDL-PepPI
 To install from the development branch run
 ```
 git clone git@github.com:ShutaoChen97/IIDL-PepPI.git
