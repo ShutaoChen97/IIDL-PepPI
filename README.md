@@ -141,13 +141,9 @@ git clone https://huggingface.co/Rostlab/prot_bert
 To install from the development branch run
 ```
 git clone git@github.com:ShutaoChen97/IIDL-PepPI.git
-```
-
-Then 
-
-```
-# unzip IIDL-PepPI-master.zip
-cd IIDL-PepPI-master
+cd IIDL-PepPI/utils
+tar -xvzf nrdb90.tar.gz
+cd ..
 ```
 
 **Finally, configure the Defalut path of the above tool and the database in `config.yaml`. You can change the path of the tool and database by configuring `config.yaml` as needed.**
