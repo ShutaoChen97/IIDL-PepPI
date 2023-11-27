@@ -2,7 +2,7 @@
 
 Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **an interpretable progressive transfer learning model based on biological sequence pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
 
-The online prediction webserver of IIDL-PepPI can be accessible at **http://bliulab.net/IIDL-PepPI/**.
+Given the complexity and instability of individuals in configuring the environment, we strongly recommend that users use IIDL-PepPI 's online prediction Web server, which can be accessed through **http://bliulab.net/IIDL-PepPI/**.
 
 ![IIDL-PepPI](/imgs/IIDL-PepPI.png)
 **Fig. 1: Data preparation workflow and network architecture of IIDL-PepPI. a** Data preparation workflow of IIDL-PepPI, in which the public databases used include RCSB PDB, PDBe, and UniProt. **b** Network architecture of IIDL-PepPI for peptide-protein binary interaction prediction and binding residue recognition, including sequence representation, feature encoding, bi-attentional module, and decoding. Based on the biological sequence pragmatic analysis, the bi-attention module explicitly integrates features from the peptide and protein sides to distinguish different peptide-protein-specific interactions. **c** The progressive transfer learning architecture. The initial stage of IIDL-PepPI commences with pre-training peptide-protein binary interactions using sequence-level datasets and the coarse-grained learning of basic network parameters. Subsequently, in the second phase, we transfer the parameters of the basic network, replace the decoder, and conduct fine-grained fine-tuning of the model using residue-level dataset for precise prediction of peptide- and protein-binding residues in specific peptide-protein pairs.
@@ -132,14 +132,13 @@ git clone https://huggingface.co/Rostlab/prot_bert
 ## 1.3 Inatsll IIDL-PepPI
 To install from the development branch run
 ```
-wget https://github.com/ShutaoChen97/IIDL-PepPI/archive/refs/heads/main.zip
-
+git clone git@github.com:ShutaoChen97/IIDL-PepPI.git
 ```
 
 Then 
 
 ```
-unzip IIDL-PepPI-master.zip
+# unzip IIDL-PepPI-master.zip
 cd IIDL-PepPI-master
 ```
 
