@@ -33,6 +33,14 @@ tqdm 4.66.1
 transformers 4.35.2
 ```
 
+> **Note** If you have an available GPU, the accelerated IIDL-PepPI can be used to predict peptide-protein binary interactions and pair-specific binding residues. Change the URL below to reflect your version of the cuda toolkit (cu118 for cuda=11.6 and cuda 11.8, cu121 for cuda 12.1). However, do not provide a number greater than your installed cuda toolkit version!
+> 
+> ```
+> pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+> ```
+>
+> For more information on other cuda versions, see the [pytorch installation documentation](https://pytorch.org/).
+
 ## 1.3 Tools
 Two multiple sequence alignment tools and three databases are required: 
 ```
