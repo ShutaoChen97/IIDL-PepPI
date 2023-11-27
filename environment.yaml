@@ -96,4 +96,3 @@ dependencies:
       - triton==2.1.0
       - tzdata==2023.3
       - urllib3==2.1.0
-prefix: /home/cst/anaconda3/envs/iidl
