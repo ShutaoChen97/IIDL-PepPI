@@ -146,7 +146,7 @@ tar -xvzf nrdb90.tar.gz
 cd ..
 ```
 
-Besides, **due to the limit of 2G file size uploaded by Git LFS**, the comparison file used by IIDL-PepPI to reduce the dimensionality of pre-training (ProtBERT) features is available through our online server (**http://bliulab.net/IIDL-PepPI/**).
+Besides, **due to the limit of 2G file size uploaded by Git LFS**, the comparison file used by IIDL-PepPI to reduce the dimensionality of pre-training (ProtBERT) features is available through our [IIDL-PepPI online Web server](http://bliulab.net/IIDL-PepPI) (about 3G).
 ```
 wget http://bliulab.net/IIDL-PepPI/static/download/protein_webserver.pkl
 mv protein_webserver.pkl saved_models/protbert_feature_before_pca/
