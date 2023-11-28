@@ -121,23 +121,22 @@ if __name__ == '__main__':
         pro_len = len(pro_seq_list[0])
         if pro_len > 800:
             pro_len = 800
-        
-        peptide_lab_str = ''
-        for tmp in range(pep_len):
-            peptide_lab_str += str(peptide_residue[tmp])
-        protein_lab_str = ''
-        for tmp in range(pro_len):
-            protein_lab_str += str(protein_residue[tmp])
-            
+
         if round(ouputs) == 1:
+            peptide_lab_str = ''
+            for tmp in range(pep_len):
+                peptide_lab_str += str(peptide_residue[tmp])
+            protein_lab_str = ''
+            for tmp in range(pro_len):
+                protein_lab_str += str(protein_residue[tmp])
             log_idx = True
             writer.writerow([str(pep_seq_list[0]), str(pro_seq_list[0]),
-                             str(f"{ouputs:.3f}"), log_idx, 
-                             str(peptide_lab_str), str(protein_lab_str)])
+                            str(f"{ouputs:.3f}"), log_idx, 
+                            str(peptide_lab_str), str(protein_lab_str)])
         else:
             log_idx = False
             writer.writerow([str(pep_seq_list[0]), str(pro_seq_list[0]),
                              str(f"{ouputs:.3f}"), log_idx, 
-                             'NA', 'NA'])
+                             'NAN!', 'NAN!'])
     
     print('The analysis was successfully completed! The result has been saved to the result.csv.')
