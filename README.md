@@ -13,6 +13,7 @@ Accurately predicting peptide-protein interactions (PepPIs) is essential for bio
 
 ```
 conda create -n iidl python=3.10
+conda activate iidl
 ```
 
 ## 1.2 Requirements
@@ -164,6 +165,9 @@ It takes 2 steps to predict peptide-protein binary interaction and peptide-prote
 
 (2) Then, run `test.sh` to make multi-level prediction, including binary interaction prediction and combined residue recognition. 
 It should be noted that `test.sh` automatically calls the scripts `generate_peptide_features.py`, `generate_protein_features.py`, and `generate_pssm.py` to generate the multi-source isomerization characteristics of peptides and proteins.
+```
+bash test.sh
+```
  
 > **Note** you can running `python test.py -h` to learn the meaning of each parameter.
 
