@@ -1,6 +1,6 @@
 # IIDL-PepPI
 
-Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **an interpretable progressive transfer learning model based on biological sequence pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
+Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **an progressive transfer learning model based on interpretable biological sequence pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
 
 **Given the complexity and instability of individuals in configuring the environment, we strongly recommend that users use IIDL-PepPI 's online prediction Web server, which can be accessed through **http://bliulab.net/IIDL-PepPI/**.**
 
@@ -192,11 +192,11 @@ If you find our work useful, please cite us at
   publisher={Wiley Online Library}
 }
 
-@article{chen2023interpretable,
-  title={Interpretable Progressive Transfer Learning for Peptide-Protein-Specific Interaction Profiling based on Biological Sequence Pragmatic Analysis},
+@article{chen2024progressive,
+  title={Progressive Transfer Learning for Peptide-Protein-Specific Interaction Profiling based on Interpretable Biological Sequence Pragmatic Analysis},
   author={Chen, Shutao and Yan, Ke and Liu, Bin},
   journal={submitted},
-  year={2023},
+  year={2024},
   publisher={}
 }
 
