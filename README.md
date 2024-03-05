@@ -194,7 +194,7 @@ If you find our work useful, please cite us at
 
 @article{chen2024progressive,
   title={Progressive Transfer Learning for Peptide-Protein-Specific Interaction Profiling based on Interpretable Biological Sequence Pragmatic Analysis},
-  author={Chen, Shutao and Yan, Ke and Liu, Bin},
+  author={Chen, Shutao and Yan, Ke and Li, Xuelong and Liu, Bin},
   journal={submitted},
   year={2024},
   publisher={}
