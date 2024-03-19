@@ -1,6 +1,6 @@
 # IIDL-PepPI
 
-Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **a progressive transfer learning model based on interpretable biological sequence pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
+Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **a progressive transfer learning model based on pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
 
 **Given the complexity and instability of individuals in configuring the environment, we strongly recommend that users use IIDL-PepPI 's online prediction Web server, which can be accessed through **http://bliulab.net/IIDL-PepPI/**.**
 
@@ -192,8 +192,8 @@ If you find our work useful, please cite us at
   publisher={Wiley Online Library}
 }
 
-@article{chen2024progressive,
-  title={Progressive Transfer Learning for Peptide-Protein-Specific Interaction Profiling based on Interpretable Biological Sequence Pragmatic Analysis},
+@article{chen2024peptide,
+  title={Peptide-Protein Interaction Profiling Based on Pragmatic Analysis and Progressive Transfer Learning},
   author={Chen, Shutao and Yan, Ke and Li, Xuelong and Liu, Bin},
   journal={submitted},
   year={2024},
