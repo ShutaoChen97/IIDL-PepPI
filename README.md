@@ -9,9 +9,6 @@
   [![GitHub license](https://img.shields.io/github/license/ShutaoChen97/IIDL-PepPI.svg)](https://github.com/ShutaoChen97/IIDL-PepPI/blob/master/LICENSE)
   [![Zenodo DOI-10.5281/zenodo.10240298](https://img.shields.io/badge/Zenodo%20DOI-10.5281/zenodo.10240298-blue)](https://doi.org/10.5281/zenodo.10240298)
 
-  
-  [![Zenodo DOI:10.5281/zenodo.10240298](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.5281/zenodo.10240298)
-
 </div>
 
 
