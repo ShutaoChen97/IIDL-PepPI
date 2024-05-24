@@ -7,6 +7,7 @@
   [![GitHub forks](https://badgen.net/github/forks/ShutaoChen97/IIDL-PepPI/)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/network/)
   [![GitHub issues](https://badgen.net/github/issues/ShutaoChen97/IIDL-PepPI/?color=red)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/issues/)
   [![GitHub license](https://img.shields.io/github/license/ShutaoChen97/IIDL-PepPI.svg)](https://github.com/ShutaoChen97/IIDL-PepPI/blob/master/LICENSE)
+  https://img.shields.io/badge/any_text-you_like-blue
   [![Zenodo DOI:10.5281/zenodo.10240298](https://img.shields.io/badge/Zenodo DOI:-10.5281/zenodo.10240298-blue)
 
   
