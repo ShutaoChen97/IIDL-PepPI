@@ -1,5 +1,17 @@
 # IIDL-PepPI
 
+<div align="center">
+  
+  [![GitHub stars](https://badgen.net/github/stars/ShutaoChen97/IIDL-PepPI)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/stargazers/)
+  [![GitHub watchers](https://badgen.net/github/watchers/ShutaoChen97/IIDL-PepPI/)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/watchers/)
+  [![GitHub forks](https://badgen.net/github/forks/ShutaoChen97/IIDL-PepPI/)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/network/)
+  [![GitHub issues](https://badgen.net/github/issues/ShutaoChen97/IIDL-PepPI/?color=red)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/issues/)
+  [![GitHub license](https://img.shields.io/github/license/ShutaoChen97/IIDL-PepPI.svg)](https://github.com/ShutaoChen97/IIDL-PepPI/blob/master/LICENSE)
+  [![Zenodo DOI:10.5281/zenodo.10240298](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.5281/zenodo.10240298)
+
+</div>
+
+
 Accurately predicting peptide-protein interactions (PepPIs) is essential for biology and disease research. Given the homogeneity of biological sequences and natural language, the grammar and semantics of peptides or proteins have been extensively studied to solve the important tasks in protein sequence analysis. However, these methods ignored the pragmatic information of proteins. Here, we introduce **IIDL-PepPI**, **a progressive transfer learning model based on pragmatic analysis** for predicting binary interactions and binding residues in peptide-protein-specific pairs.
 
 **Given the complexity and instability of individuals in configuring the environment, we strongly recommend that users use IIDL-PepPI 's online prediction Web server, which can be accessed through **http://bliulab.net/IIDL-PepPI/**.**
