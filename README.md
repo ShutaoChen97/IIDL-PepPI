@@ -7,7 +7,7 @@
   [![GitHub forks](https://badgen.net/github/forks/ShutaoChen97/IIDL-PepPI/)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/network/)
   [![GitHub issues](https://badgen.net/github/issues/ShutaoChen97/IIDL-PepPI/?color=red)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/issues/)
   [![GitHub license](https://img.shields.io/github/license/ShutaoChen97/IIDL-PepPI.svg)](https://github.com/ShutaoChen97/IIDL-PepPI/blob/master/LICENSE)
-  [![any_text-you_like](https://img.shields.io/badge/any_text-you_like-blue)]([https://your_link_here](https://doi.org/10.5281/zenodo.10240298))
+  [![Zenodo DOI-10.5281/zenodo.10240298](https://img.shields.io/badge/any_text-you_like-blue)]([https://your_link_here](https://doi.org/10.5281/zenodo.10240298))
 
   
   [![Zenodo DOI:10.5281/zenodo.10240298](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.5281/zenodo.10240298)
