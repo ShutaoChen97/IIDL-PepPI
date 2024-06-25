@@ -198,15 +198,15 @@ If you find our work useful, please cite us at
 ```
 @article{chen2023pdb,
   title={PDB-BRE: A ligand--protein interaction binding residue extractor based on Protein Data Bank},
-  author={Chen, Shutao and Yan, Ke and Liu, Bin},
+  author={Shutao Chen, Ke Yan, and Bin Liu},
   journal={Proteins: Structure, Function, and Bioinformatics},
   year={2023},
   publisher={Wiley Online Library}
 }
 
-@article{chen2024peptide,
-  title={Peptide-Protein Interaction Profiling Based on Pragmatic Analysis and Progressive Transfer Learning},
-  author={Chen, Shutao and Yan, Ke and Li, Xuelong and Liu, Bin},
+@article{chen2024protein,
+  title={Protein language pragmatic analysis and progressive transfer learning for profiling peptide-protein interactions},
+  author={Shutao Chen, Ke Yan, Xuelong Li, and Bin Liu},
   journal={submitted},
   year={2024},
   publisher={}
