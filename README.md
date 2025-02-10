@@ -206,9 +206,9 @@ If you find our work useful, please cite us at
 @article{chen2024protein,
   title={Protein language pragmatic analysis and progressive transfer learning for profiling peptide-protein interactions},
   author={Shutao Chen, Ke Yan, Xuelong Li, and Bin Liu},
-  journal={submitted},
-  year={2024},
-  publisher={}
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2025},
+  publisher={IEEE}
 }
 
 ```
