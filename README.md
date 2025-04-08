@@ -4,7 +4,6 @@
   
   [![GitHub stars](https://badgen.net/github/stars/ShutaoChen97/IIDL-PepPI?_t=1681000000)](https://github.com/ShutaoChen97/IIDL-PepPI/stargazers/)
   [![GitHub forks](https://badgen.net/github/forks/ShutaoChen97/IIDL-PepPI/?_t=1681000000)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/network/)
-  # [![GitHub issues](https://badgen.net/github/issues/ShutaoChen97/IIDL-PepPI/?color=red)](https://GitHub.com/ShutaoChen97/IIDL-PepPI/issues/)
   [![GitHub license](https://img.shields.io/github/license/ShutaoChen97/IIDL-PepPI.svg)](https://github.com/ShutaoChen97/IIDL-PepPI/blob/master/LICENSE)
   [![Zenodo DOI-10.5281/zenodo.10240298](https://img.shields.io/badge/Zenodo%20DOI-10.5281/zenodo.10240298-blue)](https://doi.org/10.5281/zenodo.10240298)
 
