@@ -27,8 +27,12 @@ conda activate iidl
 ```
 
 ## 1.2 Requirements
-The main dependencies used in this project are as follows (for more information, please see the `environment.yaml` file):
+We recommend installing the environment using the provided `environment.yaml` file to ensure compatibility:
+```
+conda env update -f environment.yaml --prune
+```
 
+If this approach fails or Conda is not available, you can manually install the main dependencies as listed below:
 ```
 python  3.10
 biopython 1.81
