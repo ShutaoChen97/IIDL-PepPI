@@ -67,7 +67,7 @@ ProtBERT \
 
 Databases:
 ```
-nrdb90 (http://bliulab.net/sAMPpred-GAT/static/download/nrdb90.tar.gz)
+nrdb90 (http://bliulab.net/IIDL-PepPI/static/download/nrdb90.tar.gz)
 ```
 
 **nrdb90**: We have supplied the nrdb90 databases on our webserver. You need to put it into the `utils/` directoy and decompress it. 
